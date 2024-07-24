@@ -10,9 +10,12 @@ public class User
   
   public string Role { get; set; }
 
-  public User()
+  public User(string username, string email, string password, string role = "User")
   {
-    //...
+    Username = username;
+    Email = email;
+    Password = password;
+    Role = role;
   }
 
   public void UpdatePassword(string newPassword)

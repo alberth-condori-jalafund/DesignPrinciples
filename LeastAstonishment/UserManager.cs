@@ -6,12 +6,12 @@ public class UserManager
 
   public UserManager()
   {
-    _users = [];
+    _users = new List<User>();
   }
 
   public void AddUser(string username, string email, string password)
   {
-    _users.Add(new User { Username = username, Email = email, Password = password });
+    _users.Add(new User(username, email, password));
   }
 
   public void UpdateUserPassword(string username, string newPassword)
@@ -35,6 +35,10 @@ public class UserManager
     if (user != null)
     {
       user.Role = role;
+    }
+    else
+    {
+      Console.WriteLine($"User with username {username} not found.");
     }
   }
 
