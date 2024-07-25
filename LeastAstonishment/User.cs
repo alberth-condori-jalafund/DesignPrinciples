@@ -8,11 +8,14 @@ public class User
   
   public string Password { get; set; }
   
-  public string Role { get; set; }
+  public Role Role { get; set; }
 
-  public User()
+  public User(string username, string email, string password)
   {
-    //...
+    Username = username;
+    Email = email;
+    Password = password;
+    Role = Role.User;
   }
 
   public void UpdatePassword(string newPassword)
